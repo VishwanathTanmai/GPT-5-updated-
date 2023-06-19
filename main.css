@@ -1,172 +1,136 @@
-@import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
-/* End Fonts */
-/* Start Global rules */
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-/* End Global rules */
 
-/* Start body rules */
 body {
-    background-image: linear-gradient(-225deg, #f0eaea 0%, #f5f4ef 100%);
-background-image: linear-gradient(to top, #ece8e5 0%, #f7f6f2ea 100%);
-background-attachment: fixed;
-  background-repeat: no-repeat;
-
-    font-family: 'Vibur', cursive;
-/*   the main font */
-    font-family: 'Abel', sans-serif;
-opacity: .95;
-/* background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%); */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0faff;
 }
 
-form {
-    width: 450px;
-    min-height: 500px;
-    height: auto;
-    border-radius: 5px;
-    margin: 2% auto;
-    box-shadow: 0 9px 50px hsla(34, 98%, 50%, 0.31);
-    padding: 2%;
-    background-image: linear-gradient(-225deg, #06fabd 50%, #04f7e3 50%);
-}
-/* form Container */
-form .con {
-    display: -webkit-flex;
-    display: flex;
-  
-    -webkit-justify-content: space-around;
-    justify-content: space-around;
-  
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-  
-      margin: 0 auto;
+.wrapper {
+  position: relative;
+  max-width: 470px;
+  width: 100%;
+  border-radius: 12px;
+  padding: 20px 30px 120px;
+  background: #4070f4;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-/* the header form form */
-header {
-    margin: 2% auto 10% auto;
-    text-align: center;
-}
-/* Login title form form */
-header h2 {
-    font-size: 250%;
-    font-family: 'Playfair Display', serif;
-    color: #3e403f;
-}
-/*  A welcome message or an explanation of the login form */
-header p {letter-spacing: 0.05em;}
-
-
-
-
-.input-item {
-    background: rgba(6, 136, 243, 0.829);
-    color: rgb(4, 152, 250);
-    padding: 14.5px 0px 15px 9px;
-    border-radius: 5px 0px 0px 5px;
+.form.login {
+  position: absolute;
+  left: 50%;
+  bottom: -86%;
+  transform: translateX(-50%);
+  width: calc(100% + 220px);
+  padding: 20px 140px;
+  border-radius: 50%;
+  height: 100%;
+  background: #fff;
+  transition: all 0.6s ease;
 }
 
-
-
-/* Show/hide password Font Icon */
-#eye {
-    background: #fff;
-    color: rgb(7, 205, 240);
-  
-    margin: 5.9px 0 0 0;
-    margin-left: -20px;
-    padding: 15px 9px 19px 0px;
-    border-radius: 0px 5px 5px 0px;
-  
-    float: right;
-    position: relative;
-    right: 1%;
-    top: -.2%;
-    z-index: 5;
-    
-    cursor: pointer;
-}
-/* inputs form  */
-input[class="form-input"]{
-    width: 240px;
-    height: 50px;
-  
-    margin-top: 2%;
-    padding: 15px;
-    
-    font-size: 16px;
-    font-family: 'Abel', sans-serif;
-    color: #000000;
-  
-    outline: none;
-    border: none;
-  
-    border-radius: 0px 5px 5px 0px;
-    transition: 0.2s linear;
-    
-}
-input[id="txt-input"] {width: 250px;}
-/* focus  */
-input:focus {
-    transform: translateX(-2px);
-    border-radius: 5px;
+.wrapper.active .form.login {
+  bottom: -15%;
+  border-radius: 35%;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
 }
 
-button {
-    display: inline-block;
-    color: #f3bc06;
-  
-    width: 280px;
-    height: 50px;
-  
-    padding: 0 20px;
-    background: #fff;
-    border-radius: 5px;
-    
-    outline: none;
-    border: none;
-  
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.2s linear;
-    
-    margin: 7% auto;
-    letter-spacing: 0.05em;
-}
-/* Submits */
-.submits {
-    width: 48%;
-    display: inline-block;
-    float: left;
-    margin-left: 2%;
+.form header {
+  font-size: 30px;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-/*       Forgot Password button FAF3DD  */
-.frgt-pass {background: transparent;}
-
-/*     Sign Up button  */
-.sign-up {background: #f70505;}
-
-
-/* buttons hover */
-button:hover {
-    transform: translatey(3px);
-    box-shadow: none;
+.form.login header {
+  color: #333;
+  opacity: 0.6;
 }
 
-/* buttons hover Animation */
-button:hover {
-    animation: ani9 0.4s ease-in-out infinite alternate;
+.wrapper.active .form.login header {
+  opacity: 1;
 }
-@keyframes ani9 {
-    0% {
-        transform: translateY(3px);
-    }
-    100% {
-        transform: translateY(5px);
-    }
+
+.wrapper.active .signup header {
+  opacity: 0.6;
+}
+
+.wrapper form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+form input {
+  height: 60px;
+  outline: none;
+  border: none;
+  padding: 0 15px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.form.login input {
+  border: 1px solid #aaa;
+}
+
+.form.login input:focus {
+  box-shadow: 0 1px 0 #ddd;
+}
+
+form .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox input[type="checkbox"] {
+  height: 16px;
+  width: 16px;
+  accent-color: #fff;
+  cursor: pointer;
+}
+
+form .checkbox label {
+  cursor: pointer;
+  color: #fff;
+}
+
+form a {
+  color: #333;
+  text-decoration: none;
+}
+
+form a:hover {
+  text-decoration: underline;
+}
+
+form input[type="submit"] {
+  margin-top: 15px;
+  padding: none;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.form.login input[type="submit"] {
+  background: #4070f4;
+  color: #fff;
+  border: none;
 }
